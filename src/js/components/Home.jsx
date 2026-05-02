@@ -12,8 +12,6 @@ const Home = () => {
 			{/*<h2>Consumiento mi primera Api</h2>
 			//<RickApi></RickApi>
 			*/}
-		
-			<h2>Consumiento la api del todolist</h2>
 			<TodoListApi/>
 		</div>
 	);

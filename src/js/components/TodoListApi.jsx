@@ -66,28 +66,35 @@ export const TodoListApi = () => {
   }, [])
 
   return (
-    <div>
-      <h1>Todo List Pedro</h1>
+  <div className="container">
+    <h1>Todo List Pedro</h1>
 
-      <input
-        type="text"
-        value={tarea}
-        onChange={(e) => setTarea(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            agregarTarea()
-          }
-        }}
-      />
+    <input
+      className="input"
+      type="text"
+      placeholder="Escribe una tarea..."
+      value={tarea}
+      onChange={(e) => setTarea(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          agregarTarea()
+        }
+      }}
+    />
 
-      <ol>
-        {lista.map((item) => (
-          <li key={item.id}>
-            {item.label}
-            <button onClick={() => eliminarTarea(item.id)}>❌</button>
-          </li>
-        ))}
-      </ol>
-    </div>
+    <ul className="lista">
+      {lista.map((item) => (
+        <li className="item" key={item.id}>
+          <span>{item.label}</span>
+          <button
+            className="btn-delete"
+            onClick={() => eliminarTarea(item.id)}
+          >
+            ❌
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
   )
 }
